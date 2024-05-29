@@ -31,3 +31,47 @@ void FileIO::openFiles (int argc, char **argv) {
     openOutFile(argv[1]);
   }
 }
+
+
+// Accessors
+int FileIO::getNumCases (void) {
+  int nc;
+  inFile >> nc;
+  return nc;
+}
+int FileIO::getNumDays (void) {
+  int nd;
+  inFile >> nd;
+
+  if (nd < 1 || nd > 3650) std::cerr << "number of days must be between 1 and 3650" << std::endl;
+  else std::cerr << "number of days is: " << nd << std::endl;
+  
+  return nd;
+}
+int FileIO::getNumParties (void) {
+  int np;
+  inFile >> np;
+
+  if (np < 1 || np > 100) std::cerr << "number of parties must be between 1 and 100" << std::endl;
+  else std::cerr << "number of parties is: " << np << std::endl;
+  
+  return np;
+}
+std::vector<bool> FileIO::getHartalVector (int numParties) {
+  std::vector<bool> hartalVec;
+  hartalVec.resize(numParties);
+
+  for(int i = 0; i < numParties; i++) {
+    int hn;
+    inFile >> hn;
+    std::cout << hn << " ";
+    hartalVec[hn] = true;
+  }
+  std::cout << std::endl;
+  
+  return hartalVec;
+}
+
+void FileIO::printDaysLost(int dl) {
+  std::cout << "The number of days lost is: " << dl << std::endl;
+}

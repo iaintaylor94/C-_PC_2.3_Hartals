@@ -8,7 +8,7 @@ The input consists of:
 1. Number of cases to run                                                   
 2. Number of days to process over (7 <= N <= 3650)                                        
 3. Number of political parties (1 <= P <= 100)                                              
-4. P lines containing the "hartal parameter" (1 <= H <= P) for the "p"th party.                                
+4. P lines containing the "hartal parameter" (1 <= H <= P) for the "p"th party.                    
 5. GOTO step 2                           
 
 

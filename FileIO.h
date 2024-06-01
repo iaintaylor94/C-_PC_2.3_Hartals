@@ -7,9 +7,14 @@
 #include <vector>
 #include <algorithm>
 
-const int OFF_BY_ONE = 1;
-const int FRIDAY = 6;
-const int SATURDAY = 7;
+
+const int SUNDAY = 1;       // STARTS ON SUNDAY
+const int MONDAY = 2;       
+const int TUESDAY = 3;
+const int WEDNESDAY = 4;
+const int THURSDAY = 5;     // NO HARTALS
+const int FRIDAY = 6;       // NO HARTALS
+const int SATURDAY = 0;
 
 class FileIO {
 std::ifstream inFile;

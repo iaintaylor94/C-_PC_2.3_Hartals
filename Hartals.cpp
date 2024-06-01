@@ -16,10 +16,10 @@ void Hartals::calculateDaysLost (void) {
   daysLost = 0;
 
   // Iterate through each day
-  for (int i = OFF_BY_ONE; i < numDays + OFF_BY_ONE; i++) {
+  for (int i = SUNDAY; i < SUNDAY + numDays; i++) {
     // No hartals on Fridays or Saturdays 
-    if (i % FRIDAY == 0) continue;
-    if (i % SATURDAY == 0) continue;
+    if (i % 7 == FRIDAY) continue;
+    if (i % 7 == SATURDAY) continue;
     
     // Iterate through hartal vector
     for (auto it = hartalVector.begin(); it != hartalVector.end(); it++) {

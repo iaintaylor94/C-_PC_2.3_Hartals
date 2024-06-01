@@ -5,7 +5,11 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <algorithm>
 
+const int OFF_BY_ONE = 1;
+const int FRIDAY = 6;
+const int SATURDAY = 7;
 
 class FileIO {
 std::ifstream inFile;
@@ -37,7 +41,7 @@ public:
 
   int getNumDays (void);
   int getNumParties (void);
-  std::vector<bool> getHartalVector (int);
+  std::vector<int> getHartalVector (int);
 
   void printDaysLost (int);
 

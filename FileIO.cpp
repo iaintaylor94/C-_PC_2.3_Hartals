@@ -57,17 +57,23 @@ int FileIO::getNumParties (void) {
   
   return np;
 }
-std::vector<bool> FileIO::getHartalVector (int numParties) {
-  std::vector<bool> hartalVec;
-  hartalVec.resize(numParties);
+std::vector<int> FileIO::getHartalVector (int numParties) {
+  std::vector<int> hartalVec;
 
   for(int i = 0; i < numParties; i++) {
     int hn;
     inFile >> hn;
-    std::cout << hn << " ";
-    hartalVec[hn] = true;
+    hartalVec.push_back(hn);
   }
-  std::cout << std::endl;
+
+  // Sort
+  sort(hartalVec.begin(), hartalVec.end());
+
+  // Push duplicates to end of vector
+  auto it = unique(hartalVec.begin(), hartalVec.end());
+
+  // Erase duplicates
+  hartalVec.erase(it, hartalVec.end());
   
   return hartalVec;
 }
